@@ -43,6 +43,27 @@ const bestOfNewYork = [
   // Add more cards as needed
 ];
 
+const staycationPromo = [
+  {
+    bgImage: "/assets/hero/s3image1.png",
+    subtitle: "Enjoy these cool staycation promotions.",
+    title: "Best staycation deals",
+    buttonText: "See Activities",
+  },
+  {
+    bgImage: "/assets/hero/s3image2.png",
+    subtitle: "Don't forget to check out these activities.",
+    title: "All Time Favourite Activities in Dubai",
+    buttonText: "See Activities",
+  },
+  {
+    bgImage: "/assets/hero/s3image3.png",
+    subtitle: "80% Discount",
+    title: "Discover the wow of Europe",
+    buttonText: "See Activities",
+  },
+];
+
 const Hero = () => {
   return (<>
 
@@ -103,7 +124,7 @@ const Hero = () => {
 
 
 
-    <section className="w-full pt-20 min-h-screen">
+    <section className="w-full pt-20 min-h-[70vh]">
 
       <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
 
@@ -153,6 +174,49 @@ const Hero = () => {
 
       </div>
 
+    </section>
+
+
+
+
+
+
+
+    <section className="w-full pt-20 min-h-[70vh]">
+
+
+
+      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+
+
+        <div className="flex flex-wrap bg-red300/70 gap-8 justify-center">
+          {staycationPromo.map((promo, idx) => (
+            <div
+              key={idx}
+              className="relative p-5 w-[20rem] h-[18rem] rounded-xl text-white flex flex-col bg-cover bg-center"
+              style={{ backgroundImage: `url('${promo.bgImage}')` }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/20 z-0 rounded-xl"></div>
+              {/* content */}
+              <div className="p-3 flex flex-col justify-between relative z-10 h-full w-full">
+                <div>
+                  <p className="text-[0.5rem]">{promo.subtitle}</p>
+                  <h1 className="text-xl font-bold">{promo.title}</h1>
+                </div>
+
+                <div>
+
+                  <button className="bg-white text-black text-sm py-4 px-6 rounded-xl">{promo.buttonText}</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+
+
+      </div>
     </section>
 
 
