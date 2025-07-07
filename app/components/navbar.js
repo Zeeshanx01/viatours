@@ -3,6 +3,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react'; // icons for toggle (optional, install lucide-react)
 
+const navLinks = [
+  { label: "Home", href: "#" },
+  { label: "Tours", href: "#" },
+  { label: "Destination", href: "#" },
+  { label: "Activities", href: "#" },
+  { label: "Pages", href: "#" },
+  { label: "Contact", href: "#" },
+];
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,12 +26,11 @@ const Navbar = () => {
 
         {/* Desktop Links */}
         <div className="hidden md:flex text-white/80 text-xs space-x-8 max-lg:space-x-4">
-          <Link href="#" className="hover:text-orange-500 transition">Home</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Tours</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Destination</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Activities</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Pages</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Contact</Link>
+          {navLinks.map(link => (
+            <Link key={link.label} href={link.href} className="hover:text-orange-500 transition">
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -43,12 +51,11 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-full  left-0 w-full bg-black/50 backdrop-blur-xs px-8 py-4 flex flex-col space-y-4 text-white text-sm md:hidden z-40">
-          <Link href="#" className="hover:text-orange-500 transition">Home</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Tours</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Destination</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Activities</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Pages</Link>
-          <Link href="#" className="hover:text-orange-500 transition">Contact</Link>
+          {navLinks.map(link => (
+            <Link key={link.label} href={link.href} className="hover:text-orange-500 transition">
+              {link.label}
+            </Link>
+          ))}
 
           <hr className="border-white/30" />
 
@@ -57,7 +64,7 @@ const Navbar = () => {
             <button>Sign up</button>
             <button className="border rounded-full px-4 py-2">Log in</button>
           </div>
-        </div>
+    </div>
       )}
     </nav>
   );

@@ -1,8 +1,51 @@
 import React from "react";
 
+const categories = [
+  { label: "Culture" },
+  { label: "Adventure" },
+  { label: "Nature" },
+  // Add more categories as needed
+];
+
+const bestOfNewYork = [
+  {
+    image: "/assets/hero/location1.png",
+    location: "New York, USA",
+    title: "Molokini and Turtle Town Snorkeling Adventure Aboard",
+    rating: "4.8 (243)",
+    duration: "4 days",
+    price: "$225",
+  },
+  {
+    image: "/assets/hero/location2.png",
+    location: "New York, USA",
+    title: "All Inclusive Ultimate Circle Island Day Tour with Lunch",
+    rating: "4.8 (243)",
+    duration: "10 days",
+    price: "$771",
+  },
+  {
+    image: "/assets/hero/location3.png",
+    location: "New York, USA",
+    title: "Clear Kayak Tour of Shell Key Preserve and Tampa Bay Area",
+    rating: "4.8 (243)",
+    duration: "3 days",
+    price: "$225",
+  },
+  {
+    image: "/assets/hero/location4.png",
+    location: "New York, USA",
+    title: "Mauna Kea Summit Sunset and Stars Free Astro Photos Hilo Kona Waikoloa Pick Up",
+    rating: "4.8 (243)",
+    duration: "7 days",
+    price: "$771",
+  },
+  // Add more cards as needed
+];
+
 const Hero = () => {
-  return (
-    // D:\WEB_DEV\Published (Github)\viatours\public\assets\hero-bg.png
+  return (<>
+
     <section className="relative min-h-[100vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero/hero-bg.png')" }}>
 
 
@@ -45,26 +88,76 @@ const Hero = () => {
 
 
 
-        {/* Category tags (optional) */}
-        <div className="flex justify-center gap-4 mt-6">
-          <button>
-            <span className="bg-white/20 text-white/80 px-6 py-3 rounded-full text-sm">Culture</span>
-
-          </button>
-          <span className="bg-white/20 text-white/80 px-6 py-3 rounded-full text-sm">Adventure</span>
-
-          <button>
-
-          </button>
-
-          <span className="bg-white/20 text-white/80 px-6 py-3 rounded-full text-sm">Nature</span>
-          <button>
-
-          </button>
+        {/* Category tags (dynamic, same design, 3 per row, wrap if more) */}
+        <div className="flex flex-wrap justify-center gap-4 mt-6">
+          {categories.map((cat) => (
+            <button key={cat.label}>
+              <span className="bg-white/20 text-white/80 px-6 py-3 rounded-full text-sm">{cat.label}</span>
+            </button>
+          ))}
         </div>
+
+
       </div>
     </section>
-  );
+
+
+
+    <section className="w-full pt-20 min-h-screen">
+
+      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+
+
+
+        <h1 className="text-2xl font-bold ">Best of <span className="text-stone-400">New York</span></h1>
+
+
+        <div className="justify-center mx-auto flex flex-wrap gap-6 grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-1">
+
+
+          {bestOfNewYork.map((card, idx) => (
+            <div key={idx} className=" w-[15rem] max-lg:w-[17rem] max-sm:w-[20rem] max-sm:mx-auto  border border-gray-300/40 rounded-xl">
+              <div>
+                <img className="rounded-t-xl w-full" src={card.image} alt={card.title} />
+              </div>
+
+
+
+              <div className="relative p-2 space-y-2">
+                <button className="bg-white w-8 h-8 absolute right-2 -top-4 rounded-full">
+
+                </button>
+                <p className="text-[0.5rem] pl-4 text-gray-500">{card.location}</p>
+
+                <h1 className="text-xs font-semibold">{card.title}</h1>
+
+                <p className="text-[0.5rem] pl-10">{card.rating}</p>
+
+
+                <hr className="opacity-15" />
+                <div className="flex justify-between items-center">
+                  <p className="text-[0.5rem]">{card.duration}</p>
+                  <p className="text-[0.5rem]">From <span className="text-xs"> {card.price}</span> </p>
+                </div>
+
+              </div>
+
+
+
+            </div>
+          ))}
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+  </>);
 };
 
 export default Hero;
