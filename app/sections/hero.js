@@ -64,9 +64,45 @@ const staycationPromo = [
   },
 ];
 
+const popularThings = [
+  {
+    icon: "/assets/hero/s4icon1.png",
+    title: "City Tours",
+    subtitle: "100+ Tours",
+  },
+  {
+    icon: "/assets/hero/s4icon2.png",
+    title: "Cultural Tours",
+    subtitle: "80+ Tours",
+  },
+  {
+    icon: "/assets/hero/s4icon3.png",
+    title: "Day Cruises",
+    subtitle: "60+ Tours",
+  },
+  {
+    icon: "/assets/hero/s4icon4.png",
+    title: "Bus Tours",
+    subtitle: "100+ Tours",
+  },
+  {
+    icon: "/assets/hero/s4icon5.png",
+    title: "Beach Tours",
+    subtitle: "80+ Tours",
+  },
+  {
+    icon: "/assets/hero/s4icon6.png",
+    title: "Food Tours",
+    subtitle: "60+ Tours",
+  },
+  // Add more as needed
+];
+
 const Hero = () => {
   return (<>
 
+
+    {/* sec-1 D&M */}
     <section className="relative min-h-[100vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero/hero-bg.png')" }}>
 
 
@@ -123,7 +159,182 @@ const Hero = () => {
     </section>
 
 
+    {/* sec-2 D&M */}
+    <section className="w-full pt-20 min-h-[70vh]">
 
+      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+
+
+
+        <h1 className="text-2xl font-bold ">Best of <span className="text-stone-400">New York</span></h1>
+
+
+        <div className="justify-center mx-auto flex flex-wrap gap-6 grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-1">
+
+
+          {bestOfNewYork.map((card, idx) => (
+            <div key={idx} className=" w-[15rem] max-lg:w-[17rem] max-sm:w-[20rem] max-sm:mx-auto  border border-gray-300/40 rounded-xl">
+              <div>
+                <img className="rounded-t-xl w-full" src={card.image} alt={card.title} />
+              </div>
+
+
+
+              <div className="relative p-2 space-y-2">
+                <button className="bg-white w-8 h-8 absolute right-2 -top-4 rounded-full">
+
+                </button>
+                <p className="text-[0.5rem] pl-4 text-gray-500">{card.location}</p>
+
+                <h1 className="text-xs font-semibold">{card.title}</h1>
+
+                <p className="text-[0.5rem] pl-10">{card.rating}</p>
+
+
+                <hr className="opacity-15" />
+                <div className="flex justify-between items-center">
+                  <p className="text-[0.5rem]">{card.duration}</p>
+                  <p className="text-[0.5rem]">From <span className="text-xs"> {card.price}</span> </p>
+                </div>
+
+              </div>
+
+
+
+            </div>
+          ))}
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+    {/* sec-3 D&M */}
+    <section className="w-full pt-20 min-h-[70vh]">
+
+
+
+      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+
+
+        <div className="flex flex-wrap bg-red300/70 gap-8 justify-center">
+          {staycationPromo.map((promo, idx) => (
+            <div
+              key={idx}
+              className="relative p-5 w-[20rem] h-[17rem] rounded-xl text-white flex flex-col bg-cover bg-center"
+              style={{ backgroundImage: `url('${promo.bgImage}')` }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/20 z-0 rounded-xl"></div>
+              {/* content */}
+              <div className="p-3 flex flex-col justify-between relative z-10 h-full w-full">
+                <div className="space-y-2">
+                  <p className="text-xs">{promo.subtitle}</p>
+                  <h1 className="text-xl font-bold">{promo.title}</h1>
+                </div>
+
+                <div>
+
+                  <button className="bg-white text-black text-sm py-4 px-6 rounded-xl">{promo.buttonText}</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+    {/* sec-4 D&M */}
+    <section className="w-full pt-20 min-h-[70vh]">
+
+
+
+      <div className="w-[70%] flex max-md:flex-col max-lg:items-start max-md:items-center  justify-between items-center mx-auto bg-red400/50 ">
+
+
+        <div className="space-y-6 p-4 w-[20rem] max-lg:mt-8">
+          <h1 className="text-2xl font-bold">
+            Popular things to do
+          </h1>
+          <p className="text-xs">
+            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
+          </p>
+
+          <div>
+
+            <button className="bg-[#EB662B] text-white text-sm py-4 w-full rounded-xl">See All</button>
+          </div>
+        </div>
+
+
+
+        <div className=" bg-amber300/50 w-[50%] max-md:w-fit space-x-2 grid grid-cols-3 max-lg:grid-cols-2  flex-nowrap">
+
+
+
+
+          {popularThings.map((item, idx) => (
+            <div key={idx} className="w-[10rem] bg-red500/50 flex flex-col  my-10 space-y-7 items-center text-center">
+              <div>
+                <img className="w-8" src={item.icon} alt={item.title} />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-xl">{item.title}</h1>
+                <p className="text-sm">{item.subtitle}</p>
+              </div>
+            </div>
+          ))}
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* sec-5 D&M */}
     <section className="w-full pt-20 min-h-[70vh]">
 
       <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
@@ -182,42 +393,13 @@ const Hero = () => {
 
 
 
-    <section className="w-full pt-20 min-h-[70vh]">
 
 
 
-      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
-
-
-        <div className="flex flex-wrap bg-red300/70 gap-8 justify-center">
-          {staycationPromo.map((promo, idx) => (
-            <div
-              key={idx}
-              className="relative p-5 w-[20rem] h-[18rem] rounded-xl text-white flex flex-col bg-cover bg-center"
-              style={{ backgroundImage: `url('${promo.bgImage}')` }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/20 z-0 rounded-xl"></div>
-              {/* content */}
-              <div className="p-3 flex flex-col justify-between relative z-10 h-full w-full">
-                <div>
-                  <p className="text-[0.5rem]">{promo.subtitle}</p>
-                  <h1 className="text-xl font-bold">{promo.title}</h1>
-                </div>
-
-                <div>
-
-                  <button className="bg-white text-black text-sm py-4 px-6 rounded-xl">{promo.buttonText}</button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
 
 
-      </div>
-    </section>
+
 
 
 
