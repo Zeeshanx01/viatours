@@ -98,6 +98,44 @@ const popularThings = [
   // Add more as needed
 ];
 
+
+const destinations = [
+  {
+    image: "/assets/hero/s5image1.png",
+    title: "Cruises",
+    subtitle: "100+ Tours",
+  },
+  {
+    image: "/assets/hero/s5image2.png",
+    title: "Beach Tours",
+    subtitle: "100+ Tours",
+  },
+  {
+    image: "/assets/hero/s5image3.png",
+    title: "City Tours",
+    subtitle: "100+ Tours",
+  },
+  {
+    image: "/assets/hero/s5image4.png",
+    title: "Museum Tour",
+    subtitle: "100+ Tours",
+  },
+  {
+    image: "/assets/hero/s5image5.png",
+    title: "Food",
+    subtitle: "100+ Tours",
+  },
+  {
+    image: "/assets/hero/s5image6.png",
+    title: "Hiking",
+    subtitle: "100+ Tours",
+  },
+
+  // Add more cards as needed
+];
+
+
+
 const Hero = () => {
   return (<>
 
@@ -340,37 +378,38 @@ const Hero = () => {
       <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
 
 
-
-        <h1 className="text-2xl font-bold ">Best of <span className="text-stone-400">New York</span></h1>
-
-
-        <div className="justify-center mx-auto flex flex-wrap gap-6 grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-1">
+        <div className="flex justify-between">
 
 
-          {bestOfNewYork.map((card, idx) => (
-            <div key={idx} className=" w-[15rem] max-lg:w-[17rem] max-sm:w-[20rem] max-sm:mx-auto  border border-gray-300/40 rounded-xl">
+          <h1 className="text-2xl font-bold ">Trending Destinations</h1>
+
+          <button className="text-sm">See all</button>
+
+        </div>
+
+
+
+
+
+        <div className="justify-center gap-4 flex flex-wrap  grid-cols-6 max-lg:grid-cols-4 max-md:grid-cols-2">
+
+
+          {destinations.map((card, idx) => (
+            <div key={idx} className=" w-[10rem] rounded-xl">
               <div>
-                <img className="rounded-t-xl w-full" src={card.image} alt={card.title} />
+                <img className="rounded-xl w-full h-52   object-cover" src={card.image} alt={card.title} />
               </div>
 
 
 
-              <div className="relative p-2 space-y-2">
-                <button className="bg-white w-8 h-8 absolute right-2 -top-4 rounded-full">
-
-                </button>
-                <p className="text-[0.5rem] pl-4 text-gray-500">{card.location}</p>
-
-                <h1 className="text-xs font-semibold">{card.title}</h1>
-
-                <p className="text-[0.5rem] pl-10">{card.rating}</p>
+              <div className=" p-2 space-y-2">
 
 
-                <hr className="opacity-15" />
-                <div className="flex justify-between items-center">
-                  <p className="text-[0.5rem]">{card.duration}</p>
-                  <p className="text-[0.5rem]">From <span className="text-xs"> {card.price}</span> </p>
-                </div>
+                <h1 className="text-sm font-semibold">{card.title}</h1>
+
+                <p className="text-xs ">{card.subtitle}</p>
+
+
 
               </div>
 
