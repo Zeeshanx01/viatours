@@ -135,6 +135,25 @@ const destinations = [
 ];
 
 
+const tourz = [
+  {
+    icon: "/assets/hero/s6icon1.png",
+    title: "Ultimate flexibility",
+    subtitle: "You’re in control, with free cancellation and payment.",
+  },
+  {
+    icon: "/assets/hero/s6icon2.png",
+    title: "Memorable experiences",
+    subtitle: "Browse and book tours and activities so incredible.",
+  },
+  {
+    icon: "/assets/hero/s6icon3.png",
+    title: "Quality at our core",
+    subtitle: "High quality standards. Millions of reviews.",
+  },
+  // Add more as needed
+];
+
 
 const Hero = () => {
   return (<>
@@ -383,7 +402,7 @@ const Hero = () => {
 
           <h1 className="text-2xl font-bold ">Trending Destinations</h1>
 
-          <button className="text-sm">See all</button>
+          <button className="text-sm text-black/70 hover:underline">See all</button>
 
         </div>
 
@@ -428,6 +447,60 @@ const Hero = () => {
 
 
 
+
+
+
+
+
+
+
+    {/* sec-6 D&M */}
+    <section className="w-full pt-20 min-h-[70vh]">
+
+
+
+      <div className="w-[70%] flex max-md:flex-col max-lg:items-start max-md:items-center  justify-between items-center mx-auto bg-red400/50 ">
+
+
+
+
+        <div className=" bg-amber300/50 w-[50%] max-md:w-fit space-x-2 ">
+
+
+
+
+          {tourz.map((item, idx) => (
+            <div key={idx} className="w[10rem] bg-red500/50 flex   my-10 space-x-4 itemscenter textcenter">
+              <div>
+                <img className="w-12" src={item.icon} alt={item.title} />
+              </div>
+              <div className="  space-y-2">
+                <h1 className="text-xl">{item.title}</h1>
+                <p className="text-sm">{item.subtitle}</p>
+              </div>
+            </div>
+          ))}
+
+
+
+
+
+        </div>
+
+
+
+
+
+        <div className="">
+          <img className="rounded-xl w-[80%]" src="/assets/hero/s6image.png" alt="" />
+        </div>
+
+
+
+
+
+      </div>
+    </section>
 
 
 
