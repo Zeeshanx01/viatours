@@ -16,18 +16,18 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="backdrop-blurxs w-full bg-white/10  shadow-md py-4 px-8 flex justify-between items-center fixed top-0 z-50">
+    <nav className=" w-full bgwhite/10  shadowmd py-4 px-12 flex justify-between items-center absolute top-0 z-50">
       
       {/* Logo and Links */}
       <div className="flex items-center space-x-8 ">
         <div>
-          <img className="h-6" src="/assets/navbar/logo.png" alt="Logo" />
+          <img className="h-7" src="/assets/navbar/logo.png" alt="Logo" />
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex text-white/80 text-xs space-x-8 max-lg:space-x-4">
+        <div className="hidden md:flex text-white/80 text-[0.75rem] space-x-10 max-lg:space-x-4">
           {navLinks.map(link => (
-            <Link key={link.label} href={link.href} className="hover:text-orange-500 transition">
+            <Link key={link.label} href={link.href} className="hover:text-viaOrange transition">
               {link.label}
             </Link>
           ))}
@@ -35,7 +35,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Buttons */}
-      <div className="hidden md:flex text-white/80 space-x-6 max-lg:space-x-4 text-xs">
+      <div className="hidden md:flex text-white/80 space-x-7 max-lg:space-x-4 text-xs">
         <button>USD</button>
         <button>Sign up</button>
         <button className="border rounded-full px-4 py-2">Log in</button>

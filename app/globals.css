@@ -10,11 +10,15 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-viaOrange: #EB662B;
+  --color-viaGray: #717171;
+  --color-viaLightOrange: #EB662B0D;
+  
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ededed;
+    --background: #ffffff;
     --foreground: #0a0a0a;
   }
 }
