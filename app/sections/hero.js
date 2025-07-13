@@ -2,9 +2,8 @@ import React from "react";
 
 const categories = [
   { label: "Culture" },
-  { label: "Food" },
-  { label: "Nature" },
   { label: "Adventure" },
+  { label: "Nature" },
   // Add more categories as needed
 ];
 
@@ -99,7 +98,6 @@ const popularThings = [
   // Add more as needed
 ];
 
-
 const destinations = [
   {
     image: "/assets/hero/s5image1.png",
@@ -154,6 +152,95 @@ const tourz = [
   },
   // Add more as needed
 ];
+
+const stats = [
+  {
+    icon: "/assets/hero/s7icon1.svg",
+    number: "932M",
+    label: "Total Donations",
+  },
+  {
+    icon: "/assets/hero/s7icon2.svg",
+    number: "24M",
+    label: "Campaigns Closed",
+  },
+  {
+    icon: "/assets/hero/s7icon3.svg",
+    number: "10M",
+    label: "Happy People",
+  },
+  {
+    icon: "/assets/hero/s7icon4.svg",
+    number: "65M",
+    label: "Our Volunteers",
+  },
+];
+
+const testimonials = [
+  {
+    title: "Great Work",
+    text: "I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance",
+    image: "/assets/hero/s9-img1.png",
+    name: "Courtney Henry",
+    role: "Web Designer",
+  },
+  {
+    title: "Great Work",
+    text: "I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance",
+    image: "/assets/hero/s9-img1.png",
+    name: "Courtney Henry",
+    role: "Web Designer",
+  },
+  {
+    title: "Great Work",
+    text: "I think Educrat is the best theme I ever seen this year. Amazing design, easy to customize and a design quality superlative account on its cloud platform for the optimized performance",
+    image: "/assets/hero/s9-img1.png",
+    name: "Courtney Henry",
+    role: "Web Designer",
+  },
+];
+
+const reviewStats = [
+  {
+    number: "4.9",
+    description: "1000+ reviews on TripAdvisor. Certificate of Excellence",
+  },
+  {
+    number: "16M",
+    description: "Happy Customers",
+  },
+  {
+    number: "Award winner",
+    description: "G2’s 2021 Best Software Awards",
+  },
+];
+
+const articles = [
+  {
+    image: "/assets/hero/s10-img1.png",
+    date: 'April 06 2023',
+    name: 'Ali Tufan',
+    title: "Kenya vs Tanzania Safari: The Better African Safari Experience",
+  },
+  {
+    image: "/assets/hero/s10-img2.png",
+    date: 'April 07 2023',
+    name: 'Emily Johnson',
+    title: "Exploring the Serengeti: A Wildlife Adventure",
+  },
+  {
+    image: "/assets/hero/s10-img3.png",
+    date: 'April 08 2023',
+    name: 'By Maxwell Rhodes',
+    title: "Into the Wild: An Unforgettable Safari Journey",
+  },
+
+  // Add more cards as needed
+];
+
+
+
+
 
 
 const Hero = () => {
@@ -215,6 +302,21 @@ const Hero = () => {
 
       </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     {/* sec-2 D&M */}
@@ -439,7 +541,6 @@ const Hero = () => {
             </div>
           ))}
 
-
         </div>
 
 
@@ -517,13 +618,301 @@ const Hero = () => {
 
 
 
+    {/* sec7 D&M */}
+    <section className="w-full min-h-fit mt-32 mb-32" >
+
+      <div className="w-[60%] mx-auto flex justify-between bg-gray600/60">
+
+
+        {stats.map((stat, idx) => (
+          <div key={idx} className="space-y-6 flex flex-col justify-center items-center">
+            <div>
+              <img className="w-14" src={stat.icon} alt="" />
+            </div>
+            <div className="text-center">
+              <h1 className="text-[2.05rem] font-semibold">{stat.number}</h1>
+              <p className="text-[0.85rem]">{stat.label}</p>
+            </div>
+          </div>
+        ))}
+
+      </div>
+
+    </section>
 
 
 
 
 
 
-    <section className="h-screen"></section>
+
+
+
+
+    {/* sec-8 D&M */}
+    <section className="relative min-h-[65vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero/s8-bg.png')" }}>
+
+
+
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/5  z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 w-[50%] mx-auto text-center text-white px-4">
+
+
+        {/* Headline */}
+        <h1 className="text-[3.5rem] leading-[4.2rem] max-md:text-5xl font-bold mb-4 mt-20">
+          Keep things flexible
+        </h1>
+        <p className="w-[50%] mb-8 text-center mx-auto text-[0.8rem] text-white/80">Use Reserve Now & Pay Later to secure the activities you don't want to miss without being locked in.</p>
+
+        <div className="w-full flex justify-center">
+          <img src="/assets/hero/s8-btn.svg" alt="" />
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+    {/* Testimonials Section */}
+    {/* sec-9 D&M */}
+    <section className="w-full min-h-fit bg-viaLightOrange">
+
+
+      <div className="w-[70%] mx-auto pt-20 pb-20">
+
+
+
+        <h1 className="text-2xl font-bold  pb-10">What our Travelers are saying</h1>
+
+
+        <div className="flex justify-between bg-blue500/50 space-x-8">
+
+
+          {testimonials.map((t, idx) => (
+            <div key={idx} className="bg-white space-y-4 rounded-xl px-4 py-6">
+
+
+              <div className="space-y-2">
+                <h1 className="text-viaOrange text-[1.0rem]">{t.title}</h1>
+                <p className="text-[0.8rem]">"{t.text}"</p>
+              </div>
+
+              <div className="w-full h-[1px] bg-[#00000026]"></div>
+
+
+
+              <div className="flex items-center space-x-3">
+
+
+                <div>
+                  <img className="w-11" src={t.image} alt={t.name} />
+                </div>
+
+                <div className="space-y1 text-[0.7rem] ">
+                  <h1 className="font-semibold">{t.name}</h1>
+                  <p>{t.role}</p>
+                </div>
+
+
+              </div>
+
+
+            </div>
+          ))}
+
+
+
+        </div>
+
+
+
+
+
+
+
+        {/* Review Stats Section (below testimonials) */}
+        <div className="w-full flex justify-between pt-10 space-x-8">
+
+
+          {reviewStats.map((stat, idx) => (
+            <div className="w-1/3" key={idx}>
+              <h1 className="text-[1.4rem] font-bold">{stat.number}</h1>
+              <p className="text-[0.8rem] ">{stat.description}</p>
+            </div>
+          ))}
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* sec-10 D&M */}
+    <section className="w-full pt-28 pb-24 bg-amber300 min-h-[50vh]">
+
+      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+
+
+        <div className="flex justify-between pl-4 pr-10 ">
+
+
+          <h1 className="text-2xl font-bold ">Travel Articles</h1>
+
+          <button className="text-[0.775rem] text-black/70 hover:underline">See all</button>
+
+        </div>
+
+
+
+
+
+        <div className="justify-center gap-4 flex">
+
+
+          {articles.map((card, idx) => (
+            <div key={idx} className="relative w-1/3 space-x-3 space-y-4 rounded-xl">
+              <div>
+                <img className="rounded-xl w-full h-60   object-cover" src={card.image} alt={card.title} />
+              </div>
+
+
+              <div className="absolute top-4 left-4">
+                <button className='bg-white rounded-full px-3 py-1 text-[0.8rem] '>Trips</button>
+              </div>
+              <div className=" py-2 space-y-4">
+
+
+                <div className="flex space-x-2">
+
+                  <p className="text-xs ">{card.date}</p>
+                  <p className="text-xs ">By {card.name}</p>
+                </div>
+                <h1 className="text-sm font-semibold pr-4">{card.title}</h1>
+
+
+
+              </div>
+
+
+
+            </div>
+          ))}
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    {/* sec-11 D&M */}
+    <section className="relative h-[45vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero/s11-bg.png')" }}>
+
+
+
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/10  z-0"></div>
+
+      {/* Content */}
+      <div className="relative z-10 w-[72%] flex justify-start mx-auto textcenter text-white px-4">
+
+        <div className='flex flex-col w-[35%] bg-red500/50'>
+
+          {/* Headline */}
+          <h1 className="text-[1.5rem] leading-[2.2rem] max-md:text-5xl font-bold mb-4 mt20">
+            Subscribe To Our Mailing List And Stay Up To Date
+          </h1>
+
+
+          <p className=" mb-8 textcenter mx-auto text-[0.9rem] text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+          <div className="w-full max-w-md ">
+            <form className="flex items-center  p-2 rounded-lg overflow-hidden bg-white/20 shadow-sm">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="flex-1  text-sm outline-none"
+              />
+              <button
+                type="submit"
+                className="bg-white text-black text-sm rounded-lg fontsemibold px-6 py-4 "
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </>);
 };
 
