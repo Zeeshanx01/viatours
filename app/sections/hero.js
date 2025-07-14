@@ -2,8 +2,9 @@ import React from "react";
 
 const categories = [
   { label: "Culture" },
-  { label: "Adventure" },
+  { label: "Food" },
   { label: "Nature" },
+  { label: "Adventure" },
   // Add more categories as needed
 ];
 
@@ -257,17 +258,17 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/10  z-0"></div>
 
       {/* Content */}
-      <div className="relative z-10 w-[50%] mx-auto text-center text-white px-4">
+      <div className="relative z-10 w-[50%] max-md:w-[90%] mx-auto text-center text-white px-4">
 
 
         {/* Headline */}
-        <h1 className="text-[3.5rem] leading-[4.2rem] max-md:text-5xl font-bold mb-4 mt-20">
+        <h1 className="text-[3.5rem] leading-[4.2rem] max-md:text-[2.5rem] max-md:leading-[2.9rem] font-bold mb-4 mt-20">
           Choose a Country For Your Next Adventure?
         </h1>
         <p className="mb-8 text-[0.8rem] text-white/80">From local escapes to far-flung adventures</p>
 
         {/* Search bar */}
-        <form className="flex items-center mb-16 justify-center w-[52%] bg-white rounded-full mx-auto">
+        <form className="flex items-center mb-16 justify-center w-[52%] max-md:w-[80%] bg-white rounded-full mx-auto">
           <button className="py-1 pl-5 pr-2 bg-gray500 rounded-full">
             <img className="w-6" src="/assets/hero/location.png" alt="" />
 
@@ -291,15 +292,19 @@ const Hero = () => {
 
 
         {/* Category tags (dynamic, same design, 3 per row, wrap if more) */}
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
+        <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 md:gap-x-10 lg:gap-x-16 gap-y-6 mx-auto mt-10 mb-10 bg-red400/60">
           {categories.map((cat) => (
             <button key={cat.label}>
-              <span className="bg-white/20 text-white/80 px-12 py-4 rounded-full text-[0.75rem]">{cat.label}</span>
+              <span className="inline-block w-40 max-lg:w-32 bg-white/20 text-white/80 py-4 rounded-full text-[0.75rem] text-center">
+                {cat.label}
+              </span>
             </button>
           ))}
         </div>
 
 
+
+
       </div>
     </section>
 
@@ -317,63 +322,56 @@ const Hero = () => {
 
 
 
-
-
-    {/* sec-2 D&M */}
+    `{/* sec-2 D&M */}
     <section className="w-full pt-24 min-h-[70vh]">
+      <div className="w-[75%] max-lg:w-[96%] space-y-10 mx-auto bg-red400/50">
+        <h1 className="text-2xl font-bold">
+          Best of <span className="text-stone-400">New York</span>
+        </h1>
 
-      <div className="w-[68%] space-y-10 mx-auto bg-red400/50 ">
-
-
-
-        <h1 className="text-2xl font-bold ">Best of <span className="text-stone-400">New York</span></h1>
-
-
-        <div className="justify-center mx-auto flex flex-wrap gap-6 grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-1">
-
-
-          {bestOfNewYork.map((card, idx) => (
-            <div key={idx} className=" w-[15rem] max-lg:w-[17rem] max-sm:w-[20rem] max-sm:mx-auto  border border-[#E7E6E6] rounded-xl">
-              <div>
-                <img className="rounded-t-xl w-full" src={card.image} alt={card.title} />
-              </div>
+        {/* This is the important change: justify-start instead of justify-center */}
+        <div className="flex justify-center bg-amber500/50 mx-auto max-w-full">
+          <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 bg-red500/50 justify-startmax-md: justify-center gap-6'>
 
 
-
-              <div className="relative px-4 py-3 space-y-2">
-                <button className="bg-white  w-8 h-8 absolute right-2 -top-4 rounded-full">
-
-                </button>
-                <p className="text-[0.65rem] pl-4 text-viaGray">{card.location}</p>
-
-                <h1 className="text-[0.80rem] leading-[1.2rem] fontsemibold">{card.title}</h1>
-
-                <p className="text-[0.65rem] pl-14">{card.rating}</p>
-
-
-                {/* <hr className="bg-[#E7E6E6]" /> */}
-                <div className="w-full h-[1px]  bg-[#E7E6E6]"></div>
-                <div className="flex justify-between items-center">
-                  <p className="text-[0.65rem]">{card.duration}</p>
-                  <p className="text-[0.65rem]">From <span className="text-xs"> {card.price}</span> </p>
+            {bestOfNewYork.map((card, idx) => (
+              <div
+                key={idx}
+                className="w-[14rem] max-lg:w-[17rem] max-sm:w-[20rem] m4 border border-[#E7E6E6] rounded-xl bg-blue500/50"
+              >
+                <div>
+                  <img
+                    className="rounded-t-xl w-full"
+                    src={card.image}
+                    alt={card.title}
+                  />
                 </div>
 
+                <div className="relative px-4 py-3 space-y-2">
+                  <button className="bg-white w-8 h-8 absolute right-2 -top-4 rounded-full"></button>
+                  <p className="text-[0.65rem] pl-4 text-viaGray">{card.location}</p>
+                  <h1 className="text-[0.80rem] leading-[1.2rem] fontsemibold">
+                    {card.title}
+                  </h1>
+                  <p className="text-[0.65rem] pl-14">{card.rating}</p>
+
+                  <div className="w-full h-[1px] bg-[#E7E6E6]"></div>
+                  <div className="flex justify-between items-center">
+                    <p className="text-[0.65rem]">{card.duration}</p>
+                    <p className="text-[0.65rem]">
+                      From <span className="text-xs">{card.price}</span>
+                    </p>
+                  </div>
+                </div>
               </div>
-
-
-
-            </div>
-          ))}
+            ))}
+          </div>
 
 
         </div>
-
-
       </div>
-
     </section>
-
-
+    `
 
 
 
@@ -383,7 +381,7 @@ const Hero = () => {
 
 
 
-      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+      <div className="w-[70%] space-y-10 mx-auto bg-blue-400/50 ">
 
 
         <div className="flex flex-wrap bg-red300/70 gap-6 justify-center">
@@ -427,7 +425,7 @@ const Hero = () => {
 
 
 
-      <div className="w-[70%] flex max-md:flex-col max-lg:items-start max-md:items-center  justify-between items-center mx-auto bg-red400/50 ">
+      <div className="w-[70%] flex max-lg:flex-col  justify-between items-center mx-auto bg-red400/50 ">
 
 
         <div className="space-y-6 p-4 w-[23rem] max-lg:mt-8">
@@ -440,19 +438,19 @@ const Hero = () => {
 
           <div>
 
-            <button className="bg-[#EB662B] text-white text-sm py-4 w-full rounded-xl">See All</button>
+            <button className="bg-viaOrange text-white text-sm py-4 w-full rounded-xl">See All</button>
           </div>
         </div>
 
 
 
-        <div className=" bg-amber300/50 w-[50%] max-md:w-fit space-x-2 space-y-5 grid grid-cols-3 max-lg:grid-cols-2  flex-nowrap">
+        <div className=" bg-amber300/50 w-[50%] max-lg:w-[80%] max-md:w-[95%] max-lg:mt-6 max-md:w-fit gap-3 space-y-5 grid grid-cols-3 max-md:grid-cols-2  flex-nowrap">
 
 
 
 
           {popularThings.map((item, idx) => (
-            <div key={idx} className="w-[10rem] bg-white flex flex-col px-6 py-8 rounded-xl my10 space-y-4 items-center text-center">
+            <div key={idx} className="w[10rem] w-full bg-white flex flex-col px-6 py-8 rounded-xl my-1 space-y-4 items-center text-center">
               <div>
                 <img className="w-14" src={item.icon} alt={item.title} />
               </div>
@@ -498,13 +496,13 @@ const Hero = () => {
     {/* sec-5 D&M */}
     <section className="w-full pt-20 bg-amber300 min-h-[50vh]">
 
-      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+      <div className="w-[70%] max-md:w-[95%] space-y-10 mx-auto bg-red400/50 ">
 
 
-        <div className="flex justify-between pl-4 pr-10 hover:underline">
+        <div className="flex justify-between pl-4 pr-10 ">
 
 
-          <h1 className="text-2xl font-bold ">Trending Destinations</h1>
+          <h1 className="text-2xl font-bold w-[70%]">Trending Destinations</h1>
 
           <button className="text-[0.775rem] text-black/70 hover:underline">See all</button>
 
@@ -514,7 +512,7 @@ const Hero = () => {
 
 
 
-        <div className="justify-center gap-4 flex flex-wrap  grid-cols-6 max-lg:grid-cols-4 max-md:grid-cols-2">
+        <div className="  gap-4 grid justify-items-center grid-cols-6 max-xl:grid-cols-3 max-md:grid-cols-2">
 
 
           {destinations.map((card, idx) => (
@@ -558,14 +556,14 @@ const Hero = () => {
 
 
     {/* sec-6 D&M */}
-    <section className="w-full pt-20 min-h-[70vh]">
+    <section className="w-full pt-20 max-lg:pb-40 min-h-[70vh] max-lg:min-h-[90vh]">
 
 
 
-      <div className="w-[80%] max-md:w-[98%]  bg-orange200/70 my-10 mx-auto bg-red400/50 ">
+      <div className="w-[80%] max-xl:w-[90%] max-lg:w-[98%]  bg-orange200/70 my-10 mx-auto bg-red400/50 ">
 
 
-        <div className="flex max-md:flex-col relative w-[80%] max-md:w-full min-h-[62vh] max-md:min-h-[80vh] rounded-2xl bg-red500/50 bg-viaLightOrange max-lg:items-start max-md:items-center  justify-between items-center">
+        <div className="flex max-lg:flex-col relative w-[80%] max-lg:w-full min-h-[62vh] max-lg:min-h-[100vh] rounded-2xl bg-red500/50 bg-viaLightOrange max-lg:items-center max-md:items-center  justify-between items-center">
 
 
           <div className=" bg-amber300/50 w-[50%] space-y-10 max-md:w-fit md:ml-40 max-md:mt-4 space-x-2 ">
@@ -603,8 +601,8 @@ const Hero = () => {
 
 
 
-          <div className=" absolute right-[-15rem] max-md:bottom-[-14rem] max-md:right-[1rem] ">
-            <img className="rounded-xl w-[30rem] max-md:w-[28rem]" src="/assets/hero/s6image.png" alt="" />
+          <div className=" absolute right-[-15rem] max-lg:rightauto max-lg:bottom-[-14rem] max-lg:left-1/2 max-lg:-translate-x-1/2 ">
+            <img className="rounded-xl w-[30rem] max-md:w-[20rem] shrink-0 " src="/assets/hero/s6image.png" alt="" />
           </div>
 
 
@@ -621,11 +619,11 @@ const Hero = () => {
     {/* sec7 D&M */}
     <section className="w-full min-h-fit mt-32 mb-32" >
 
-      <div className="w-[60%] mx-auto flex justify-between bg-gray600/60">
+      <div className="w-[60%] max-lg:w-[90%] mx-auto max-md:grid max-md:grid-cols-2 gap-4 flex justify-between bg-gray600/60">
 
 
         {stats.map((stat, idx) => (
-          <div key={idx} className="space-y-6 flex flex-col justify-center items-center">
+          <div key={idx} className="space-y-6 flex flex-col  justify-center items-center">
             <div>
               <img className="w-14" src={stat.icon} alt="" />
             </div>
@@ -659,7 +657,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/5  z-0"></div>
 
       {/* Content */}
-      <div className="relative z-10 w-[50%] mx-auto text-center text-white px-4">
+      <div className="relative z-10 w-[50%] max-lg:w-[80%] max-md:w-[98%] mx-auto text-center text-white px-4">
 
 
         {/* Headline */}
@@ -694,11 +692,11 @@ const Hero = () => {
         <h1 className="text-2xl font-bold  pb-10">What our Travelers are saying</h1>
 
 
-        <div className="flex justify-between bg-blue500/50 space-x-8">
+        <div className="flex max-lg:flex-col  justify-between bg-blue500/50 space-x-8 max-lg:space-y-8 max-lg:m-1">
 
 
           {testimonials.map((t, idx) => (
-            <div key={idx} className="bg-white space-y-4 rounded-xl px-4 py-6">
+            <div key={idx} className="bg-white max-lg:w-[98%] space-y-4 rounded-xl px-4 py-6">
 
 
               <div className="space-y-2">
@@ -740,11 +738,11 @@ const Hero = () => {
 
 
         {/* Review Stats Section (below testimonials) */}
-        <div className="w-full flex justify-between pt-10 space-x-8">
+        <div className="w-full flex max-md:flex-col justify-between pt-10 space-x-8 max-md:space-y-4">
 
 
           {reviewStats.map((stat, idx) => (
-            <div className="w-1/3" key={idx}>
+            <div className="w-1/3 max-md:w-full  " key={idx}>
               <h1 className="text-[1.4rem] font-bold">{stat.number}</h1>
               <p className="text-[0.8rem] ">{stat.description}</p>
             </div>
@@ -786,7 +784,7 @@ const Hero = () => {
     {/* sec-10 D&M */}
     <section className="w-full pt-28 pb-24 bg-amber300 min-h-[50vh]">
 
-      <div className="w-[70%] space-y-10 mx-auto bg-red400/50 ">
+      <div className="w-[70%] max-sm:w-[95%]  space-y-10 mx-auto bg-red400/50 ">
 
 
         <div className="flex justify-between pl-4 pr-10 ">
@@ -802,11 +800,11 @@ const Hero = () => {
 
 
 
-        <div className="justify-center gap-4 flex">
+        <div className="justify-center gap-4 flex max-lg:flex-col max-lg:items-center">
 
 
           {articles.map((card, idx) => (
-            <div key={idx} className="relative w-1/3 space-x-3 space-y-4 rounded-xl">
+            <div key={idx} className="relative w-1/3 max-lg:w-[70%] space-x-3 space-y-4 rounded-xl">
               <div>
                 <img className="rounded-xl w-full h-60   object-cover" src={card.image} alt={card.title} />
               </div>
@@ -860,12 +858,12 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/10  z-0"></div>
 
       {/* Content */}
-      <div className="relative z-10 w-[72%] flex justify-start mx-auto textcenter text-white px-4">
+      <div className="relative z-10 w-[72%] bg-red500/30 flex justify-start mx-auto textcenter text-white px-4">
 
-        <div className='flex flex-col w-[35%] bg-red500/50'>
+        <div className='flex flex-col w-[55%] max-lg:w-[75%] max-md:w-[98%] bg-red500/50'>
 
           {/* Headline */}
-          <h1 className="text-[1.5rem] leading-[2.2rem] max-md:text-5xl font-bold mb-4 mt20">
+          <h1 className="text-[1.5rem] max-lg:text-[1.2rem]max-md:text-[0.9rem] leading-[2.2rem] max-lg:text-center   font-bold mb-4 mt20">
             Subscribe To Our Mailing List And Stay Up To Date
           </h1>
 
@@ -881,7 +879,7 @@ const Hero = () => {
               />
               <button
                 type="submit"
-                className="bg-white text-black text-sm rounded-lg fontsemibold px-6 py-4 "
+                className="bg-white text-black text-sm rounded-lg fontsemibold px-6 py-4 max-xl:py-2 "
               >
                 Subscribe
               </button>
