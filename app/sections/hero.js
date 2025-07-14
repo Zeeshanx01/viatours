@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 const categories = [
   { label: "Culture" },
@@ -245,7 +246,8 @@ const articles = [
 
 
 const Hero = () => {
-  return (<>
+  return (
+    <>
 
 
     {/* sec-1 D&M */}
@@ -270,7 +272,7 @@ const Hero = () => {
         {/* Search bar */}
         <form className="flex items-center mb-16 justify-center w-[52%] max-md:w-[80%] bg-white rounded-full mx-auto">
           <button className="py-1 pl-5 pr-2 bg-gray500 rounded-full">
-            <img className="w-6" src="/assets/hero/location.png" alt="" />
+            <Image className="w-6" src="/assets/hero/location.png" alt="" width={24} height={24} />
 
           </button>
           <input
@@ -282,7 +284,7 @@ const Hero = () => {
             type="submit"
             className=" p-2 rounded-r-full font-semibold"
           >
-            <img src="/assets/hero/Button.png" alt="" />
+            <Image src="/assets/hero/Button.png" alt="" width={24} height={24} />
           </button>
         </form>
 
@@ -322,7 +324,7 @@ const Hero = () => {
 
 
 
-    `{/* sec-2 D&M */}
+    {/* sec-2 D&M */}
     <section className="w-full pt-24 min-h-[70vh]">
       <div className="w-[75%] max-lg:w-[96%] space-y-10 mx-auto bg-red400/50">
         <h1 className="text-2xl font-bold">
@@ -340,10 +342,12 @@ const Hero = () => {
                 className="w-[14rem] max-lg:w-[17rem] max-sm:w-[20rem] m4 border border-[#E7E6E6] rounded-xl bg-blue500/50"
               >
                 <div>
-                  <img
+                  <Image
                     className="rounded-t-xl w-full"
                     src={card.image}
                     alt={card.title}
+                    width={224}
+                    height={140}
                   />
                 </div>
 
@@ -371,7 +375,6 @@ const Hero = () => {
         </div>
       </div>
     </section>
-    `
 
 
 
@@ -381,7 +384,7 @@ const Hero = () => {
 
 
 
-      <div className="w-[70%] space-y-10 mx-auto bg-blue-400/50 ">
+      <div className="w-[70%] space-y-10 mx-auto bg-blue400/50 ">
 
 
         <div className="flex flex-wrap bg-red300/70 gap-6 justify-center">
@@ -452,7 +455,7 @@ const Hero = () => {
           {popularThings.map((item, idx) => (
             <div key={idx} className="w[10rem] w-full bg-white flex flex-col px-6 py-8 rounded-xl my-1 space-y-4 items-center text-center">
               <div>
-                <img className="w-14" src={item.icon} alt={item.title} />
+                <Image className="w-14" src={item.icon} alt={item.title} width={56} height={56} />
               </div>
               <div className="space-y-[0.25rem]">
                 <h1 className="text-[0.90rem]">{item.title}</h1>
@@ -518,7 +521,7 @@ const Hero = () => {
           {destinations.map((card, idx) => (
             <div key={idx} className=" w-[10rem] space-x-3 space-y-2 rounded-xl">
               <div>
-                <img className="rounded-xl w-full h-52   object-cover" src={card.image} alt={card.title} />
+                <Image className="rounded-xl w-full h-52   object-cover" src={card.image} alt={card.title} width={160} height={208} />
               </div>
 
 
@@ -581,7 +584,7 @@ const Hero = () => {
               {tourz.map((item, idx) => (
                 <div key={idx} className="w[10rem] bg-red500/50 flex   my10 space-x-4 itemscenter textcenter">
                   <div>
-                    <img className="w-12" src={item.icon} alt={item.title} />
+                    <Image className="w-12" src={item.icon} alt={item.title} width={48} height={48} />
                   </div>
                   <div className=" w-56 bg-red300 space-y-2">
                     <h1 className="text-[0.95rem]">{item.title}</h1>
@@ -602,7 +605,7 @@ const Hero = () => {
 
 
           <div className=" absolute right-[-15rem] max-lg:rightauto max-lg:bottom-[-14rem] max-lg:left-1/2 max-lg:-translate-x-1/2 ">
-            <img className="rounded-xl w-[30rem] max-md:w-[20rem] shrink-0 " src="/assets/hero/s6image.png" alt="" />
+            <Image className="rounded-xl w-[30rem] max-md:w-[20rem] shrink-0 " src="/assets/hero/s6image.png" alt="" width={480} height={320} />
           </div>
 
 
@@ -625,7 +628,7 @@ const Hero = () => {
         {stats.map((stat, idx) => (
           <div key={idx} className="space-y-6 flex flex-col  justify-center items-center">
             <div>
-              <img className="w-14" src={stat.icon} alt="" />
+              <Image className="w-14" src={stat.icon} alt="" width={56} height={56} />
             </div>
             <div className="text-center">
               <h1 className="text-[2.05rem] font-semibold">{stat.number}</h1>
@@ -667,7 +670,7 @@ const Hero = () => {
         <p className="w-[50%] mb-8 text-center mx-auto text-[0.8rem] text-white/80">Use Reserve Now & Pay Later to secure the activities you don't want to miss without being locked in.</p>
 
         <div className="w-full flex justify-center">
-          <img src="/assets/hero/s8-btn.svg" alt="" />
+          <Image src="/assets/hero/s8-btn.svg" alt="" width={120} height={40} unoptimized />
 
         </div>
 
@@ -712,7 +715,7 @@ const Hero = () => {
 
 
                 <div>
-                  <img className="w-11" src={t.image} alt={t.name} />
+                  <Image className="w-11" src={t.image} alt={t.name} width={44} height={44} />
                 </div>
 
                 <div className="space-y1 text-[0.7rem] ">
@@ -806,7 +809,7 @@ const Hero = () => {
           {articles.map((card, idx) => (
             <div key={idx} className="relative w-1/3 max-lg:w-[70%] space-x-3 space-y-4 rounded-xl">
               <div>
-                <img className="rounded-xl w-full h-60   object-cover" src={card.image} alt={card.title} />
+                <Image className="rounded-xl w-full h-60   object-cover" src={card.image} alt={card.title} width={240} height={240} />
               </div>
 
 

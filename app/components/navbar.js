@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react'; // icons for toggle (optional, install lucide-react)
+import Image from 'next/image';
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -21,7 +22,7 @@ const Navbar = () => {
       {/* Logo and Links */}
       <div className="flex items-center space-x-8 ">
         <div>
-          <img className="h-7" src="/assets/navbar/logo.png" alt="Logo" />
+          <Image className="h-7" src="/assets/navbar/logo.png" alt="Logo" width={112} height={28} />
         </div>
 
         {/* Desktop Links */}

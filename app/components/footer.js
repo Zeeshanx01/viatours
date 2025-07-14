@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image';
 
 const footer = () => {
   const companyLinks = [
@@ -116,7 +117,7 @@ const footer = () => {
           <p className='text-[0.8rem] text-white/80 w-full sm:w-auto'>© Copyright Viatours 2024</p>
           <div className='flex flex-wrap justify-center gap-2'>
             {footerImages.map((image) => (
-              <img className='w-8' key={image.alt} src={image.src} alt={image.alt} />
+              <Image className='w-8' key={image.alt} src={image.src} alt={image.alt} width={32} height={32} />
             ))}
           </div>
         </div>
