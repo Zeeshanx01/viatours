@@ -667,7 +667,7 @@ const Hero = () => {
         <h1 className="text-[3.5rem] leading-[4.2rem] max-md:text-5xl font-bold mb-4 mt-20">
           Keep things flexible
         </h1>
-        <p className="w-[50%] mb-8 text-center mx-auto text-[0.8rem] text-white/80">Use Reserve Now & Pay Later to secure the activities you don't want to miss without being locked in.</p>
+        <p className="w-[50%] mb-8 text-center mx-auto text-[0.8rem] text-white/80">Use Reserve Now & Pay Later to secure the activities you don&#39;t want to miss without being locked in.</p>
 
         <div className="w-full flex justify-center">
           <Image src="/assets/hero/s8-btn.svg" alt="" width={120} height={40} unoptimized />
@@ -704,7 +704,7 @@ const Hero = () => {
 
               <div className="space-y-2">
                 <h1 className="text-viaOrange text-[1.0rem]">{t.title}</h1>
-                <p className="text-[0.8rem]">"{t.text}"</p>
+                <p className="text-[0.8rem]">&quot;{t.text}&quot;</p>
               </div>
 
               <div className="w-full h-[1px] bg-[#00000026]"></div>
