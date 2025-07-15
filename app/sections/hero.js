@@ -270,9 +270,9 @@ const Hero = () => {
           <p className="mb-8 text-[0.8rem] text-white/80">From local escapes to far-flung adventures</p>
 
           {/* Search bar */}
-          <form className="flex items-center mb-16 justify-center w-[52%] max-md:w-[80%] bg-white rounded-full mx-auto">
+          <form className="flex items-center mb-16 justify-center w-[52%] max-md:w-[95%] bg-white rounded-full mx-auto">
             <button className="py-1 pl-5 pr-2 bg-gray500 rounded-full">
-              <Image className="w-6" src="/assets/hero/location.png" alt="" width={24} height={24} />
+              <Image className="w-6 max-md:w-9" src="/assets/hero/location.png" alt="" width={24} height={24} />
 
             </button>
             <input
@@ -284,7 +284,7 @@ const Hero = () => {
               type="submit"
               className=" p-2 rounded-r-full font-semibold"
             >
-              <Image src="/assets/hero/Button.png" alt="" width={24} height={24} />
+              <Image className="max-md:w-9" src="/assets/hero/Button.png" alt="" width={24} height={24} />
             </button>
           </form>
 
@@ -294,7 +294,7 @@ const Hero = () => {
 
 
           {/* Category tags (dynamic, same design, 3 per row, wrap if more) */}
-          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 md:gap-x-10 lg:gap-x-16 max-sm:gap-x-12  gap-y-6 mx-auto mt-10 mb-10 bg-red400/60">
+          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 max-md:gap-x-6 lg:gap-x-16 max-sm:gap-x-6  gap-y-6 mx-auto mt-10 mb-10 bg-red400/60">
             {categories.map((cat) => (
               <button key={cat.label}>
                 <span className="inline-block w-40 max-lg:w-32 max-sm:w-24 bg-white/20 text-white/80 py-4 rounded-full text-[0.75rem] text-center">
@@ -325,9 +325,9 @@ const Hero = () => {
 
 
       {/* sec-2 D&M */}
-      <section className="w-full pt-24 min-h-[70vh]">
+      <section className="w-full pt-24 max-md:mb-24 min-h-[70vh]">
         <div className="w-[75%] max-lg:w-[96%] space-y-10 mx-auto bg-red400/50">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-2xl font-bold max-md:ml-6 ">
             Best of <span className="text-stone-400">New York</span>
           </h1>
 
@@ -566,7 +566,7 @@ const Hero = () => {
         <div className="w-[80%] max-xl:w-[90%] max-lg:w-[98%]  bg-orange200/70 my-10 mx-auto bg-red400/50 ">
 
 
-          <div className="flex max-lg:flex-col relative w-[80%] max-lg:w-full min-h-[62vh] max-lg:min-h-[100vh] rounded-2xl bg-red500/50 bg-viaLightOrange max-lg:items-center max-md:items-center  justify-between items-center">
+          <div className="flex max-lg:flex-col relative w-[80%] max-lg:w-full min-h-[62vh] max-lg:min-h-[80vh] rounded-2xl bg-red500/50 bg-viaLightOrange max-lg:items-center max-md:items-center  justify-between items-center">
 
 
             <div className=" bg-amber300/50 w-[50%] space-y-10 max-md:w-fit md:ml-40 max-md:mt-4 space-x-2 ">
@@ -641,7 +641,7 @@ const Hero = () => {
       {/* sec7 D&M */}
       <section className="w-full min-h-fit mt-32 mb-32" >
 
-        <div className="w-[60%] max-lg:w-[90%] mx-auto max-md:grid max-md:grid-cols-2 gap-4 flex justify-between bg-gray600/60">
+        <div className="w-[60%] max-lg:w-[90%] mx-auto max-md:grid max-md:grid-cols-2 gap-4 max-md:gap-y-20 flex justify-between bg-gray600/60">
 
 
           {stats.map((stat, idx) => (
@@ -683,13 +683,13 @@ const Hero = () => {
 
 
           {/* Headline */}
-          <h1 className="text-[3.5rem] leading-[4.2rem] max-md:text-5xl font-bold mb-4 mt-20">
+          <h1 className="text-[3.5rem] leading-[4.2rem] max-md:text-5xl font-bold mb-4 md:mt-20">
             Keep things flexible
           </h1>
           <p className="w-[50%] mb-8 text-center mx-auto text-[0.8rem] text-white/80">Use Reserve Now & Pay Later to secure the activities you don&#39;t want to miss without being locked in.</p>
 
           <div className="w-full flex justify-center">
-            <Image src="/assets/hero/s8-btn.svg" alt="" width={120} height={40} unoptimized />
+            <Image className="w-20" src="/assets/hero/s8-btn.svg" alt="" width={120} height={40} unoptimized />
 
           </div>
 
@@ -871,7 +871,7 @@ const Hero = () => {
 
 
       {/* sec-11 D&M */}
-      <section className="relative h-[45vh] flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/assets/hero/s11-bg.png')" }}>
+      <section className="relative h-[45vh] flex items-center justify-center bg-cover  bg-right" style={{ backgroundImage: "url('/assets/hero/s11-bg.png')" }}>
 
 
 
@@ -880,17 +880,17 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/10  z-0"></div>
 
         {/* Content */}
-        <div className="relative z-10 w-[72%] max-md:w-[98%] bg-red-500/30 flex justify-start mx-auto  text-white px-4">
+        <div className="relative z-10 w-[72%] max-md:w-[98%] bg-red500/30 flex justify-start mx-auto  text-white px-4">
 
-          <div className='flex flex-col w-[55%] max-lg:w-[75%] max-md:w-[98%] max-lg:text-center bg-red500/50'>
+          <div className='flex flex-col justify-start max-lg:text-center w-[55%] max-lg:w-[75%] max-md:w-[98%]  bg-red500/50'>
 
             {/* Headline */}
-            <h1 className="text-[1.5rem] max-lg:text-[1.2rem]max-md:text-[0.9rem] leading-[2.2rem] max-lg:text-center   font-bold mb-4 mt20">
+            <h1 className="text-[1.5rem]  leading-[2.2rem]    font-bold mb-4 mt20">
               Subscribe To Our Mailing List And Stay Up To Date
             </h1>
 
 
-            <p className=" mb-8 textcenter mx-auto text-[0.9rem] text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className=" mb-8 max-lg:mx-auto  bg-red500/50 text-[0.9rem] text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             <div className="w-full max-w-md ">
               <form className="flex items-center  p-2 pl-4 rounded-lg overflow-hidden bg-white/20 shadow-sm">
