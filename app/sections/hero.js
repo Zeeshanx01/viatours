@@ -882,7 +882,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/10  z-0"></div>
 
         {/* Content */}
-        <div className="relative z-10 w-[72%] max-md:w-[98%] bg-red-500/30 flex justify-start mx-auto  text-white px-4">
+        <div className="relative z-10 w-[72%] max-md:w-[98%] bg-red500/30 flex justify-start mx-auto  text-white px-4">
 
           <div className='flex flex-col justify-start max-lg:items-center max-lg:text-center w-[35%] max-lg:w-[100%]   bg-red500/50'>
 
