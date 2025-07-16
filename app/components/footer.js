@@ -39,7 +39,7 @@ const footer = () => {
     <footer className='bg-viaPurple text-white'>
       {/* sec-1 D&M */}
       <section className="w-full min-h-fit">
-        <div className='w-[80%] py-16 mx-auto flex justify-between max-sm:flex-col max-sm:items-center max-sm:space-y-4'>
+        <div className='w-[80%] py-20 mx-auto flex justify-between max-sm:flex-col max-sm:items-center max-sm:space-y-4'>
           <p className='w-1/2 text-center max-sm:w-full'>Speak to our expert at 1-800-453-6744</p>
           <p className='w-1/2 text-center ml-8 text-[0.9rem] bg-amber200 max-sm:ml-0 max-sm:w-full'>Follow Us</p>
         </div>

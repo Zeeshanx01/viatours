@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const navLinks = [
   { label: "Home", href: "#" },
-  { label: "Tours", href: "#" },
+  { label: "Tour", href: "#" },
   { label: "Destination", href: "#" },
   { label: "Activities", href: "#" },
   { label: "Pages", href: "#" },
@@ -20,13 +20,14 @@ const Navbar = () => {
     <nav className=" w-full bgwhite/10  shadowmd py-4 px-12 flex justify-between items-center absolute top-0 z-50">
       
       {/* Logo and Links */}
-      <div className="flex items-center space-x-8 ">
+      <div className="flex items-center space-x-10 ">
         <div>
-          <Image className="h-7" src="/assets/navbar/logo.png" alt="Logo" width={112} height={28} />
+          {/* <Image className="h-7" src="/assets/navbar/logo.png" alt="Logo" width={112} height={28} /> */}
+          <img className='h-7' src="/assets/navbar/logo.png" alt="" />
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex text-white/80 text-[0.75rem] space-x-10 max-lg:space-x-4">
+        <div className="hidden md:flex text-white/80 text-[0.85rem] space-x-10 max-lg:space-x-4">
           {navLinks.map(link => (
             <Link key={link.label} href={link.href} className="hover:text-viaOrange transition">
               {link.label}

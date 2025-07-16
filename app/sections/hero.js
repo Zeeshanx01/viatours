@@ -272,8 +272,8 @@ const Hero = () => {
           {/* Search bar */}
           <form className="flex items-center mb-16 justify-center w-[52%] max-md:w-[95%] bg-white rounded-full mx-auto">
             <button className="py-1 pl-5 pr-2 bg-gray500 rounded-full">
-              <Image className="w-6 max-md:w-9" src="/assets/hero/location.png" alt="" width={24} height={24} />
-
+              {/* <Image className="w-6 max-md:w-9" src="/assets/hero/location.png" alt="" width={24} height={24} /> */}
+              <img className="w-6 max-md:w-9" src="/assets/hero/location.png" alt="" />
             </button>
             <input
               type="text"
@@ -284,7 +284,8 @@ const Hero = () => {
               type="submit"
               className=" p-2 rounded-r-full font-semibold"
             >
-              <Image className="max-md:w-9" src="/assets/hero/Button.png" alt="" width={24} height={24} />
+              {/* <Image className="max-md:w-9" src="/assets/hero/Button.png" alt="" width={24} height={24} /> */}
+              <img className=" w-14 max-md:w-9" src="/assets/hero/Button.png" alt="" />
             </button>
           </form>
 
@@ -294,7 +295,7 @@ const Hero = () => {
 
 
           {/* Category tags (dynamic, same design, 3 per row, wrap if more) */}
-          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 max-md:gap-x-6 lg:gap-x-16 max-sm:gap-x-6  gap-y-6 mx-auto mt-10 mb-10 bg-red400/60">
+          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 max-sm:gap-x-6 max-md:gap-x-6 max-lg:gap-x-16 2xl:bg-red400/60  2xl:gap-y-0 mx-auto mt-10 mb-10 ">
             {categories.map((cat) => (
               <button key={cat.label}>
                 <span className="inline-block w-40 max-lg:w-32 max-sm:w-24 bg-white/20 text-white/80 py-4 rounded-full text-[0.75rem] text-center">
@@ -326,20 +327,20 @@ const Hero = () => {
 
       {/* sec-2 D&M */}
       <section className="w-full pt-24 max-md:mb-24 min-h-[70vh]">
-        <div className="w-[75%] max-lg:w-[96%] space-y-10 mx-auto bg-red400/50">
-          <h1 className="text-2xl font-bold max-md:ml-6 ">
+        <div className="w-[70%] max-lg:w-[96%] space-y-10 mx-auto bg-red400/50">
+          <h1 className="text-2xl font-bold ml-4 max-md:ml-6 ">
             Best of <span className="text-stone-400">New York</span>
           </h1>
 
           {/* This is the important change: justify-start instead of justify-center */}
-          <div className="flex justify-center bg-amber500/50 mx-auto max-w-full">
-            <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 bg-red500/50 justify-startmax-md: justify-center gap-6'>
+          <div className="flex justify-center max-md:items-center bg-amber500/50 mx-auto max-w-full">
+            <div className='grid grid-cols-4 max-xl:grid-cols-2 max-md:grid-cols-1 bg-red500/50 max-md:items-center max-md:justify-center gap-6'>
 
 
               {bestOfNewYork.map((card, idx) => (
                 <div
                   key={idx}
-                  className="w-[14rem] max-lg:w-[17rem] max-sm:w-[20rem] m4 border border-[#E7E6E6] rounded-xl bg-blue500/50"
+                  className="w-[100%] max-lg:w-[80%] m4 border border-[#E7E6E6] mx-auto rounded-xl max-xl:bgblue-500/50"
                 >
                   <div>
                     <Image
@@ -352,17 +353,17 @@ const Hero = () => {
                   </div>
 
                   <div className="relative px-4 py-3 space-y-2">
-                    <button className="bg-white w-8 h-8 absolute right-2 -top-4 rounded-full"></button>
-                    <p className="text-[0.65rem] pl-4 text-viaGray">{card.location}</p>
-                    <h1 className="text-[0.80rem] leading-[1.2rem] fontsemibold">
+                    <button className="bg-white w-8 h-8 max-xl:w-14 max-xl:h-14 absolute right-2 -top-4 max-xl:-top-7 rounded-full"></button>
+                    <p className="text-[0.65rem] max-xl:text-[1.0rem] pl-4 text-viaGray">{card.location}</p>
+                    <h1 className="text-[0.80rem] max-xl:text-[1.5rem]  leading-[1.2rem] max-xl:leading-8 font-semibold">
                       {card.title}
                     </h1>
-                    <p className="text-[0.65rem] pl-14">{card.rating}</p>
+                    <p className="text-[0.65rem] max-xl:text-[1.0rem] pl-14">{card.rating}</p>
 
                     <div className="w-full h-[1px] bg-[#E7E6E6]"></div>
                     <div className="flex justify-between items-center">
-                      <p className="text-[0.65rem]">{card.duration}</p>
-                      <p className="text-[0.65rem]">
+                      <p className="text-[0.65rem] max-xl:text-[1.0rem]">{card.duration}</p>
+                      <p className="text-[0.65rem] max-xl:text-[1.0rem]">
                         From <span className="text-xs">{card.price}</span>
                       </p>
                     </div>
@@ -387,11 +388,12 @@ const Hero = () => {
         <div className="w-[70%] space-y-10 mx-auto bg-blue400/50 ">
 
 
-          <div className="flex flex-wrap bg-red300/70 gap-6 justify-center">
+          <div className="flex max-md:flex-col max-md:items-center flexwrap bg-red300/70 gap-6 justify-center">
             {staycationPromo.map((promo, idx) => (
               <div
                 key={idx}
-                className="relative p-5 w-[20rem] h-[17rem] rounded-xl text-white flex flex-col bg-cover bg-center"
+                // w-[22rem]
+                className="relative p-5 w-[31%] max-md:w-[90%] h-[18rem] max-md:h-[24rem] rounded-xl text-white flex flex-col bg-cover bg-center"
                 style={{ backgroundImage: `url('${promo.bgImage}')` }}
               >
                 {/* Overlay */}
@@ -432,10 +434,10 @@ const Hero = () => {
 
 
           <div className="space-y-6 p-4 w-[23rem] max-lg:mt-8">
-            <h1 className="text-[1.45rem] font-bold">
+            <h1 className="text-[1.60rem] font-bold">
               Popular things to do
             </h1>
-            <p className="text-xs">
+            <p className="text-xs leading-5">
               There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
             </p>
 
@@ -447,7 +449,7 @@ const Hero = () => {
 
 
 
-          <div className=" bg-amber300/50 w-[50%] max-lg:w-[80%] max-md:w-[95%] max-lg:mt-6 max-md:w-fit gap-3 space-y-5 grid grid-cols-3 max-md:grid-cols-2  flex-nowrap">
+          <div className=" bg-amber300/50 w-[50%] max-lg:w-[80%] max-md:w-[95%] max-lg:mt-6  gap-5 space-y-3 grid grid-cols-3 max-md:grid-cols-2  flex-nowrap">
 
 
 
@@ -455,7 +457,7 @@ const Hero = () => {
             {popularThings.map((item, idx) => (
               <div key={idx} className="w[10rem] w-full bg-white flex flex-col px-6 py-8 rounded-xl my-1 space-y-4 items-center text-center">
                 <div>
-                  <Image className="w-14" src={item.icon} alt={item.title} width={56} height={56} />
+                  <Image className="w-16" src={item.icon} alt={item.title} width={56} height={56} />
                 </div>
                 <div className="space-y-[0.25rem]">
                   <h1 className="text-[0.90rem]">{item.title}</h1>
@@ -519,7 +521,7 @@ const Hero = () => {
 
 
             {destinations.map((card, idx) => (
-              <div key={idx} className=" w-[10rem] space-x-3 space-y-2 rounded-xl">
+              <div key={idx} className=" w-[100%] max-xl:w[5.5rem] space-x-1 space-y-2 rounded-xl">
                 <div>
                   <Image className="rounded-xl w-full h-52   object-cover" src={card.image} alt={card.title} width={160} height={208} />
                 </div>
@@ -559,21 +561,21 @@ const Hero = () => {
 
 
       {/* sec-6 D&M */}
-      <section className="w-full pt-20 max-lg:pb-40 min-h-[70vh] max-lg:min-h-[90vh]">
+      <section className="w-full pt-20 max-lg:pb-40 min-h-[70vh] max-lg:min-h-[90vh]">  
 
 
 
         <div className="w-[80%] max-xl:w-[90%] max-lg:w-[98%]  bg-orange200/70 my-10 mx-auto bg-red400/50 ">
 
 
-          <div className="flex max-lg:flex-col relative w-[80%] max-lg:w-full min-h-[62vh] max-lg:min-h-[80vh] rounded-2xl bg-red500/50 bg-viaLightOrange max-lg:items-center max-md:items-center  justify-between items-center">
+          <div className="flex max-lg:flex-col relative w-[80%] max-lg:w-full min-h-[67vh] max-lg:min-h-[80vh] rounded-2xl bg-red500/50 bg-viaLightOrange max-lg:items-center max-md:items-center  justify-between items-center">
 
 
-            <div className=" bg-amber300/50 w-[50%] space-y-10 max-md:w-fit md:ml-40 max-md:mt-4 space-x-2 ">
+            <div className=" bg-amber300/50 w-[80%] space-y-10 max-md:w-fit md:ml-50 max-md:mt-4 space-x-2 ">
 
               <div className="w-40">
 
-                <h1 className="text-[1.45rem] font-bold">
+                <h1 className="text-[1.60rem] font-bold">
                   Why choose tourz
                 </h1>
               </div>
@@ -582,11 +584,11 @@ const Hero = () => {
               <div className="space-y-10">
 
                 {tourz.map((item, idx) => (
-                  <div key={idx} className="w[10rem] bg-red500/50 flex   my10 space-x-4 ">
+                  <div key={idx} className=" bg-red500/50 flex   my10 space-x-4 ">
                     <div>
                       <Image className="w-12" src={item.icon} alt={item.title} width={48} height={48} />
                     </div>
-                    <div className=" w-56 bg-red300 space-y-2">
+                    <div className=" w-60 bg-red300 space-y-2">
                       <h1 className="text-[0.95rem]">{item.title}</h1>
                       <p className="text-[0.75rem]">{item.subtitle}</p>
                     </div>
@@ -641,7 +643,7 @@ const Hero = () => {
       {/* sec7 D&M */}
       <section className="w-full min-h-fit mt-32 mb-32" >
 
-        <div className="w-[60%] max-lg:w-[90%] mx-auto max-md:grid max-md:grid-cols-2 gap-4 max-md:gap-y-20 flex justify-between bg-gray600/60">
+        <div className="w-[58%] max-lg:w-[90%] mx-auto max-md:grid max-md:grid-cols-2 gap-4 max-md:gap-y-20 flex justify-between bg-gray600/60">
 
 
           {stats.map((stat, idx) => (
@@ -683,13 +685,13 @@ const Hero = () => {
 
 
           {/* Headline */}
-          <h1 className="text-[3.5rem] leading-[4.2rem] max-md:text-5xl font-bold mb-4 md:mt-20">
+          <h1 className="text-[3.9rem] leading-[4.2rem] max-md:text-5xl font-bold mb-4 md:mt-20">
             Keep things flexible
           </h1>
           <p className="w-[50%] mb-8 text-center mx-auto text-[0.8rem] text-white/80">Use Reserve Now & Pay Later to secure the activities you don&#39;t want to miss without being locked in.</p>
 
           <div className="w-full flex justify-center">
-            <Image className="w-20" src="/assets/hero/s8-btn.svg" alt="" width={120} height={40} unoptimized />
+            <Image className="w-14" src="/assets/hero/s8-btn.svg" alt="" width={120} height={40} unoptimized />
 
           </div>
 
@@ -871,7 +873,7 @@ const Hero = () => {
 
 
       {/* sec-11 D&M */}
-      <section className="relative h-[45vh] flex items-center justify-center bg-cover  bg-right" style={{ backgroundImage: "url('/assets/hero/s11-bg.png')" }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-cover  bg-right" style={{ backgroundImage: "url('/assets/hero/s11-bg.png')" }}>
 
 
 
@@ -882,15 +884,15 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-10 w-[72%] max-md:w-[98%] bg-red500/30 flex justify-start mx-auto  text-white px-4">
 
-          <div className='flex flex-col justify-start max-lg:text-center w-[55%] max-lg:w-[75%] max-md:w-[98%]  bg-red500/50'>
+          <div className='flex flex-col justify-start max-lg:items-center max-lg:text-center w-[35%] max-lg:w-[100%]   bg-red500/50'>
 
             {/* Headline */}
-            <h1 className="text-[1.5rem]  leading-[2.2rem]    font-bold mb-4 mt20">
+            <h1 className="text-[1.66rem] max-xl:text-[1.96rem] leading-[2.2rem]    font-bold mb-4 mt20">
               Subscribe To Our Mailing List And Stay Up To Date
             </h1>
 
 
-            <p className=" mb-8 max-lg:mx-auto  bg-red500/50 text-[0.9rem] text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className=" mb-8 max-lg:mx-auto  bg-red500/50 text-[0.8rem] text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             <div className="w-full max-w-md ">
               <form className="flex items-center  p-2 pl-4 rounded-lg overflow-hidden bg-white/20 shadow-sm">
