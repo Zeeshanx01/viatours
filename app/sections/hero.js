@@ -295,7 +295,7 @@ const Hero = () => {
 
 
           {/* Category tags (dynamic, same design, 3 per row, wrap if more) */}
-          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 max-[430]:gap-y-1 max-[430]:gap-x-1  max-sm:gap-x-6 max-md:gap-x-6 max-md:gap-y-10 max-lg:gap-x-16 2xl:bg-red400/60  2xl:gap-y-0 mx-auto mt-10 mb-10 ">
+          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 max-[430]:gap-y-1 max-[430]:gap-x-1  max-sm:gap-x-0 max-md:gap-x-6 max-sm:gap-y-4 max-lg:gap-x-16 2xl:bg-red400/60  2xl:gap-y-0 mx-auto mt-10 mb-10 ">
             {categories.map((cat) => (
               <button key={cat.label}>
                 <span className="inline-block w-40 max-lg:w-32 max-sm:w-24 bg-white/20 text-white/80 py-4 rounded-full text-[0.75rem] text-center">
