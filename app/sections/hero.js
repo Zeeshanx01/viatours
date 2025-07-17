@@ -295,7 +295,7 @@ const Hero = () => {
 
 
           {/* Category tags (dynamic, same design, 3 per row, wrap if more) */}
-          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 max-sm:gap-x-6 max-md:gap-x-6 max-lg:gap-x-16 2xl:bg-red400/60  2xl:gap-y-0 mx-auto mt-10 mb-10 ">
+          <div className=" max-md:w-[70%] grid grid-cols-4 max-lg:grid-cols-2 max-[430]:gap-y-1 max-[430]:gap-x-1  max-sm:gap-x-0 max-md:gap-x-6 max-sm:gap-y-4 max-lg:gap-x-16 2xl:bg-red400/60  2xl:gap-y-0 mx-auto mt-10 mb-10 ">
             {categories.map((cat) => (
               <button key={cat.label}>
                 <span className="inline-block w-40 max-lg:w-32 max-sm:w-24 bg-white/20 text-white/80 py-4 rounded-full text-[0.75rem] text-center">
@@ -606,8 +606,8 @@ const Hero = () => {
 
 
 
-            <div className=" absolute right-[-15rem] max-lg:bottom-[-10rem] max-lg:left-1/2 max-lg:-translate-x-1/2 max-md:translate-0 max-md:left-[1rem] max-md:right-[1rem]">
-              <Image className="rounded-xl w-[30rem] max-mdw-[20rem] shrink-0 " src="/assets/hero/s6image.png" alt="" width={480} height={320} />
+            <div className=" absolute right-[-15rem] max-[1599]:right-[-20rem] max-lg:bottom-[-10rem] max-lg:left-1/2 max-lg:-translate-x-1/2 max-md:translate-0 max-md:left-[1rem] max-md:right-[1rem]">
+              <Image className="rounded-xl w-[30rem] max-[1919]:w-[34rem] max-[1599]:w-[40rem] max-lg:w-[70%] shrink-0 " src="/assets/hero/s6image.png" alt="" width={480} height={320} />
             </div>
 
 
@@ -873,7 +873,7 @@ const Hero = () => {
 
 
       {/* sec-11 D&M */}
-      <section className="relative min-h-[50vh] flex items-center justify-center bg-cover  bg-right" style={{ backgroundImage: "url('/assets/hero/s11-bg.png')" }}>
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-cover  bg-right  max-sm:bg-[position:80%_center]" style={{ backgroundImage: "url('/assets/hero/s11-bg.png')" }}>
 
 
 
@@ -895,7 +895,7 @@ const Hero = () => {
             <p className=" mb-8 max-lg:mx-auto  bg-red500/50 text-[0.8rem] text-white/80">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             <div className="w-full max-w-md ">
-              <form className="flex items-center  p-2 pl-4 rounded-lg overflow-hidden bg-white/20 shadow-sm">
+              <form className="flex items-center  p-2 pl-4 rounded-lg overflow-hidden bg-white/20 max-sm:bg-white/50 max-sm:text-black/80 backdrop-blur-xs shadow-sm">
                 <input
                   type="email"
                   placeholder="Your email"
