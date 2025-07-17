@@ -52,7 +52,7 @@ export default function ScreenInfo() {
   if (!visible) {
     return (
       <button
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-[9999] bg-black text-white px-4 py-1 rounded-md text-xs opacity-80"
+        className="fixed top-4 left-1/2 -translate-x-1/2 z-[9999] bg-black/70 text-white px-4 py-1 rounded-md text-xs opacity-80"
         onClick={() => setVisible(true)}
       >
         Show ScreenInfo
