@@ -1,8 +1,14 @@
+// 'use client'
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import ScreenInfo from "./components/ScreenInfo";
+import ScreenInfo from 'screen-info-zx01';
+
+// console.log(stacks)
+// console.log(ScreenInfo());
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +31,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ScreenInfo />
+        {/* <ScreenInfo /> */}
         <Navbar />
         {children}
         <Footer />
